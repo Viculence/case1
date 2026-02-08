@@ -12,8 +12,15 @@ def square(x, y, a, color):
     :param color: color of the square
     :return: None
     '''
-    # Вика
-    pass
+    turtle.up()
+    turtle.setposition(x, y)
+    turtle.down()
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    for _ in range(4):
+        turtle.forward(a)
+        turtle.right(90)
+    turtle.end_fill()
 
 def circle(x, y, radius, color):
     '''
@@ -76,8 +83,15 @@ def equilateral_triangle(x, y, a, color):
     :param color: color of the equilateral triangle
     :return: None
     '''
-    # Вика
-    pass
+    turtle.up()
+    turtle.setposition(x, y)
+    turtle.down()
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    for _ in range(3):
+        turtle.forward(a)
+        turtle.left(120)
+    turtle.end_fill()
 
 def right_triangle(x, y, base, height, color):
     '''
@@ -89,8 +103,17 @@ def right_triangle(x, y, base, height, color):
     :param color: color of the right triangle
     :return: None
     '''
-    # Вика
-    pass
+    turtle.up()
+    turtle.setposition(x, y)
+    turtle.down()
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.forward(base)
+    turtle.left(90)
+    turtle.forward(height)
+    turtle.left(135)
+    turtle.forward((base ** 2 + height ** 2) ** 0.5)
+    turtle.end_fill()
 
 def fish():
     # Мила

@@ -25,54 +25,101 @@ def square(x, y, a, color):
 def circle(x, y, radius, color):
     '''
     Function to draw a circle.
-    :param x: x-coordinate of the top-left center
-    :param y: y-coordinate of the top-left center
+    :param x: x-coordinate of the center
+    :param y: y-coordinate of the center
     :param radius: radius of the circle
     :param color: color of the circle
     :return: None
     '''
-    # Мила
-    pass
+    turtle.pu()
+    turtle.goto(x, y - radius)  # идёт в нижнюю точку круга
+    turtle.pd()
+
+    turtle.pencolor(color)
+    turtle.fillcolor(color)
+
+    turtle.begin_fill()
+    turtle.circle(radius)
+    turtle.end_fill()
 
 def rectangle(x, y, width, height, color):
     '''
     Function to draw a rectangle.
-    :param x: x-coordinate of the top-left corner
-    :param y: y-coordinate of the top-left corner
+    :param x: x-coordinate of the bottom-left corner
+    :param y: y-coordinate of the bottom-left corner
     :param width: width of the rectangle
     :param height: height of the rectangle
     :param color: color of the rectangle
     :return: None
     '''
-    # Мила
-    pass
+    turtle.pu()
+    turtle.goto(x, y)
+    turtle.setheading(90)  # начинает с левого нижнего угла
+    turtle.pd()
 
-def parallelogram(x, y, base, heigh, angle, color):
+    turtle.pencolor(color)
+    turtle.fillcolor(color)
+
+    turtle.begin_fill()
+    for i in range(2):
+        turtle.forward(width)
+        turtle.right(90)
+        turtle.forward(height)
+        turtle.right(90)
+    turtle.end_fill()
+
+def parallelogram(x, y, width, height, angle, color):
     '''
     Function to draw a parallelogram.
-    :param x: x-coordinate of the top-left corner
-    :param y: y-coordinate of the top-left corner
-    :param base: length of the base of the parallelogram
-    :param heigh: height of the parallelogram
-    :param angle: angle between the base and the sides
+    :param x: x-coordinate of the bottom-left corner
+    :param y: y-coordinate of the bottom-left corner
+    :param width: width of the parallelogram
+    :param height: height of the parallelogram
+    :param angle: bottom-left angle
     :param color: color of the parallelogram
     :return: None
     '''
-    # Мила
-    pass
+    turtle.pu()
+    turtle.goto(x, y)
+    turtle.setheading(angle)
+    turtle.pd()
 
-def rhombus(x, y, diagonal1, diagonal2, color):
+    turtle.pencolor(color)
+    turtle.fillcolor(color)
+
+    turtle.begin_fill()
+    for i in range(2):
+        turtle.forward(height)
+        turtle.right(angle)  # рисует с заданного левого нижнего угла
+        turtle.forward(width)
+        turtle.right(180 - angle)
+    turtle.end_fill()
+
+def rhombus(x, y, height, angle, color):
     '''
     Function to draw a rhombus.
-    :param x: x-coordinate of the top-left corner
-    :param y: y-coordinate of the top-left corner
-    :param diagonal1: length of the first diagonal
-    :param diagonal2: length of the second diagonal
+    :param x: x-coordinate of the bottom-left corner
+    :param y: y-coordinate of the bottom-left corner
+    :param height: length of the side
+    :param angle: bottom corner
     :param color: color of the rhombus
     :return: None
     '''
-    # Мила
-    pass
+    turtle.pu()
+    turtle.goto(x, y)
+    turtle.setheading(180 - angle)
+    turtle.pd()
+
+    turtle.pencolor(color)
+    turtle.fillcolor(color)
+
+    turtle.begin_fill()
+    for i in range(2):
+        turtle.forward(height)
+        turtle.right(angle)
+        turtle.forward(height)
+        turtle.right(180 - angle)
+    turtle.end_fill()
 
 def equilateral_triangle(x, y, a, color):
     '''

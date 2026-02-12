@@ -37,7 +37,6 @@ def circle(x, y, radius, color):
     turtle.goto(x, y - radius)  # идёт в нижнюю точку круга
     turtle.pd()
 
-    turtle.pencolor(color)
     turtle.fillcolor(color)
 
     turtle.begin_fill()
@@ -59,7 +58,6 @@ def rectangle(x, y, width, height, color):
     turtle.setheading(90)  # начинает с левого нижнего угла
     turtle.pd()
 
-    turtle.pencolor(color)
     turtle.fillcolor(color)
 
     turtle.begin_fill()
@@ -113,15 +111,14 @@ def rhombus(x, y, height, angle, color):
     turtle.setheading(180 - angle)
     turtle.pd()
 
-    turtle.pencolor(color)
     turtle.fillcolor(color)
 
     turtle.begin_fill()
     for i in range(2):
         turtle.forward(height)
-        turtle.right(angle)
+        turtle.right(90)
         turtle.forward(height)
-        turtle.right(180 - angle)
+        turtle.right(90)
     turtle.end_fill()
 
 def equilateral_triangle(x, y, a, color, angle=0):
@@ -169,13 +166,26 @@ def right_triangle(x, y, base, height, color, angle=0):
     turtle.forward((base ** 2 + height ** 2) ** 0.5)
     turtle.end_fill()
 
-def fish():
-    # Мила
-    pass
+def plane():
+
+   rhombus(80, 100, 60, 45, 'yellow')
+   right_triangle(165, 100, 60, 60, 'pink', 135)
+   right_triangle(80, 185, 120, 120, 'orange', -45)
+   parallelogram(165,100,80,60, 45, 45, 'blue')
+   right_triangle(245, 20, 80, 80, 'red', 90)
+   right_triangle(207, 142, 120, 120, 'green', 0)
+   equilateral_triangle(80,185,80,'purple', 0)
 
 def car():
-    # Мила
-    pass
+
+    square(270, -170, 60, 'green')
+    square(310,-170,20, 'yellow')
+    rectangle(210,-230,120,60,'blue')
+    square(225, -140, 30, 'red')
+    rectangle(30, -230, 80, 180, 'orange')
+    right_triangle(210,-150, 130, 130, 'yellow',135)
+    circle(100,-270,40, 'pink')
+    circle(250,-270,40, 'pink')
 
 def butterfly():
     right_triangle(-300, 300, 120, 120, 'orange', 270)
@@ -204,9 +214,10 @@ def candle():
 
 def main():
     butterfly()
-    fish()
-    car()
+    plane()
     candle()
+    car()
+
 
     turtle.hideturtle()
     turtle.done()

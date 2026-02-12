@@ -3,17 +3,19 @@
 
 import turtle
 
-def square(x, y, a, color):
+def square(x, y, a, color, angle=0):
     '''
     Function to draw a square.
     :param x: x-coordinate of the top-left corner
     :param y: y-coordinate of the top-left corner
     :param a: side length of the square
     :param color: color of the square
+    :param angle: angle of the square
     :return: None
     '''
     turtle.up()
     turtle.setposition(x, y)
+    turtle.setheading(angle)
     turtle.down()
     turtle.fillcolor(color)
     turtle.begin_fill()
@@ -68,7 +70,7 @@ def rectangle(x, y, width, height, color):
         turtle.right(90)
     turtle.end_fill()
 
-def parallelogram(x, y, width, height, angle, color):
+def parallelogram(x, y, width, height, angle, rotation_angle, color):
     '''
     Function to draw a parallelogram.
     :param x: x-coordinate of the bottom-left corner
@@ -76,15 +78,16 @@ def parallelogram(x, y, width, height, angle, color):
     :param width: width of the parallelogram
     :param height: height of the parallelogram
     :param angle: bottom-left angle
+    :param rotation_angle: angle for the rotation of the parallelogram
     :param color: color of the parallelogram
     :return: None
     '''
     turtle.pu()
     turtle.goto(x, y)
     turtle.setheading(angle)
+    turtle.setheading(rotation_angle)
     turtle.pd()
 
-    turtle.pencolor(color)
     turtle.fillcolor(color)
 
     turtle.begin_fill()
@@ -121,13 +124,14 @@ def rhombus(x, y, height, angle, color):
         turtle.right(180 - angle)
     turtle.end_fill()
 
-def equilateral_triangle(x, y, a, color):
+def equilateral_triangle(x, y, a, color, angle=0):
     '''
     Function to draw a equilateral triangle.
     :param x: x-coordinate of the top point of the triangle
     :param y: y-coordinate of the top point of the triangle
     :param a: side length of the triangle
     :param color: color of the equilateral triangle
+    :param angle: angle of the equilateral triangle
     :return: None
     '''
     turtle.up()
@@ -135,12 +139,13 @@ def equilateral_triangle(x, y, a, color):
     turtle.down()
     turtle.fillcolor(color)
     turtle.begin_fill()
+    turtle.setheading(angle)
     for _ in range(3):
         turtle.forward(a)
         turtle.left(120)
     turtle.end_fill()
 
-def right_triangle(x, y, base, height, color):
+def right_triangle(x, y, base, height, color, angle=0):
     '''
     Function to draw a right triangle.
     :param x: x-coordinate of the vertex of the triangle
@@ -148,6 +153,7 @@ def right_triangle(x, y, base, height, color):
     :param base: length of the base
     :param height: height of the triangle
     :param color: color of the right triangle
+    :param angle: angle of the right triangle
     :return: None
     '''
     turtle.up()
@@ -155,6 +161,7 @@ def right_triangle(x, y, base, height, color):
     turtle.down()
     turtle.fillcolor(color)
     turtle.begin_fill()
+    turtle.setheading(angle)
     turtle.forward(base)
     turtle.left(90)
     turtle.forward(height)
@@ -171,19 +178,37 @@ def car():
     pass
 
 def butterfly():
-    # Вика
-    pass
+    right_triangle(-300, 300, 120, 120, 'orange', 270)
+
+    right_triangle(-240, 120, 60, 60, 'red', 90)
+    square(-240, 180, 60, 'green')
+    right_triangle(-180, 120, 60, 60, 'purple', 180)
+
+    right_triangle(-180, 180, 120, 120, 'blue', 0)
+
+    right_triangle(-180, 180, 85, 85, 'pink', -45)
+    parallelogram(-180, 180, 60, 85, 45, -45, 'yellow')
+
 
 def candle():
-    # Вика
-    pass
+    right_triangle(-100, -300, 110, 110, 'blue', 135)
+
+    right_triangle(-144, -186, 50, 50, 'purple', 225)
+    right_triangle(-145, -115, 50, 50, 'red', 225)
+    right_triangle(-222, -265, 110, 110, 'orange', 45)
+    right_triangle(-233, -98, 75, 75, 'pink', -45)
+
+    square(-205, -48, 50, 'green')
+    parallelogram(-178, 50, 40, 65, 45, -75, 'yellow')
+
 
 def main():
+    butterfly()
     fish()
     car()
-    butterfly()
     candle()
 
+    turtle.hideturtle()
     turtle.done()
 
 main()

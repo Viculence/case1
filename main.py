@@ -24,6 +24,7 @@ def square(x, y, a, color, angle=0):
         turtle.right(90)
     turtle.end_fill()
 
+
 def circle(x, y, radius, color):
     '''
     Function to draw a circle.
@@ -42,6 +43,7 @@ def circle(x, y, radius, color):
     turtle.begin_fill()
     turtle.circle(radius)
     turtle.end_fill()
+
 
 def rectangle(x, y, width, height, color):
     '''
@@ -67,6 +69,7 @@ def rectangle(x, y, width, height, color):
         turtle.forward(height)
         turtle.right(90)
     turtle.end_fill()
+
 
 def parallelogram(x, y, width, height, angle, rotation_angle, color):
     '''
@@ -96,6 +99,7 @@ def parallelogram(x, y, width, height, angle, rotation_angle, color):
         turtle.right(180 - angle)
     turtle.end_fill()
 
+
 def rhombus(x, y, height, angle, color):
     '''
     Function to draw a rhombus.
@@ -121,6 +125,7 @@ def rhombus(x, y, height, angle, color):
         turtle.right(90)
     turtle.end_fill()
 
+
 def equilateral_triangle(x, y, a, color, angle=0):
     '''
     Function to draw a equilateral triangle.
@@ -141,6 +146,7 @@ def equilateral_triangle(x, y, a, color, angle=0):
         turtle.forward(a)
         turtle.left(120)
     turtle.end_fill()
+
 
 def right_triangle(x, y, base, height, color, angle=0):
     '''
@@ -166,6 +172,7 @@ def right_triangle(x, y, base, height, color, angle=0):
     turtle.forward((base ** 2 + height ** 2) ** 0.5)
     turtle.end_fill()
 
+
 def plane():
 
    rhombus(80, 100, 60, 45, 'yellow')
@@ -177,6 +184,7 @@ def plane():
    right_triangle(207, 142, 120, 120, 'green', 0)
 
    equilateral_triangle(80,185,80,'purple', 0)
+
 
 def car():
 
@@ -191,6 +199,7 @@ def car():
 
     circle(100,-270,40, 'pink')
     circle(250,-270,40, 'pink')
+
 
 def butterfly():
     right_triangle(-300, 300, 120, 120, 'orange', 270)

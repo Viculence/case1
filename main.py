@@ -82,7 +82,7 @@ def parallelogram(x, y, width, height, angle, rotation_angle, color):
     '''
     turtle.pu()
     turtle.goto(x, y)
-    turtle.setheading(angle)
+
     turtle.setheading(rotation_angle)
     turtle.pd()
 
@@ -171,19 +171,24 @@ def plane():
    rhombus(80, 100, 60, 45, 'yellow')
    right_triangle(165, 100, 60, 60, 'pink', 135)
    right_triangle(80, 185, 120, 120, 'orange', -45)
+
    parallelogram(165,100,80,60, 45, 45, 'blue')
    right_triangle(245, 20, 80, 80, 'red', 90)
    right_triangle(207, 142, 120, 120, 'green', 0)
+
    equilateral_triangle(80,185,80,'purple', 0)
 
 def car():
 
     square(270, -170, 60, 'green')
     square(310,-170,20, 'yellow')
+
     rectangle(210,-230,120,60,'blue')
     square(225, -140, 30, 'red')
+
     rectangle(30, -230, 80, 180, 'orange')
     right_triangle(210,-150, 130, 130, 'yellow',135)
+
     circle(100,-270,40, 'pink')
     circle(250,-270,40, 'pink')
 

@@ -202,6 +202,7 @@ def car():
 
 
 def butterfly():
+
     right_triangle(-300, 300, 120, 120, 'orange', 270)
 
     right_triangle(-240, 120, 60, 60, 'red', 90)
@@ -215,6 +216,7 @@ def butterfly():
 
 
 def candle():
+
     right_triangle(-100, -300, 110, 110, 'blue', 135)
 
     right_triangle(-144, -186, 50, 50, 'purple', 225)
@@ -231,9 +233,8 @@ def main():
     plane()
     candle()
     car()
-
-
     turtle.hideturtle()
     turtle.done()
 
-main()
+if __name__ == "__main__":
+    main()
